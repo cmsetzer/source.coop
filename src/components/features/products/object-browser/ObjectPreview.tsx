@@ -27,6 +27,27 @@ const getIframeAttributes = (
         src: `https://source-cooperative.github.io/csv-table/?iframe=true&url=${sourceUrl}`,
         style: { border: "1px solid var(--gray-5)" },
       };
+    case "glb":
+    case "gltf":
+    case "obj":
+    case "stl":
+      return {
+        src: `https://source-cooperative.github.io/model-viewer/?url=${sourceUrl}`,
+        style: { border: "1px solid var(--gray-5)" },
+      }
+    case "jpg":
+    case "jpeg":
+    case "png":
+    case "gif":
+    case "svg":
+    case "webp":
+    case "tiff":
+    case "avif":
+    case "bmp":
+      return {
+        src: `https://source-cooperative.github.io/image-viewer/?url=${sourceUrl}`,
+        style: { border: "1px solid var(--gray-5)" },
+      }
     default:
       return null;
   }
